@@ -20,7 +20,7 @@
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-          <form method="POST" action="{{ route('login') }}">
+          <form method="POST" action="{{ route('logout') }}">
               @csrf 
               <button type="submit" class="btn btn-secondary">Logout <i class="bi bi-backspace-reverse"></i></button>
           </form>

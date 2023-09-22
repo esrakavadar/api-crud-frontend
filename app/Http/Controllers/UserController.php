@@ -75,7 +75,9 @@ class UserController extends Controller
     public function logout(Request $request)
     {
         $token = session('token');
-        
+        if (!$token) {
+            return redirect()->route('login'); 
+        }
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
            ])->post('http://127.0.0.1:8000/api/logout',)->json();
